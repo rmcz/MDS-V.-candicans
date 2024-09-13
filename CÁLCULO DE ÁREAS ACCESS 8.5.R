@@ -1,4 +1,4 @@
-#ConfiguraciÃ³n inicial
+#Configuración inicial
 library(rasterVis)
 library(dichromat)
 library(raster)
@@ -8,13 +8,13 @@ library(tidyverse)
 library(raster)
 
 
-##ACCSE45LIMA###
-##########ACCES45LIMA
+##ACCESS8.5 LIMA###
+##########ACCESS8.5 LIMA
 #Cargar datos
 map <- raster("D:/Maxent/AREA Y LIMA2/Vasconcellea_candicans_ACCES85.asc")
 plot(map)
 
-#_______AREA KM2 
+#_______ÁREA KM2 
 ####################
 #library(raster)
 #library(rgdal)
@@ -22,7 +22,7 @@ plot(map)
 ####Mapa de raster estilo lucia
 
 ###reproyectar
-#### l,imite de lima
+#### Límite de Lima
 mps <- shapefile("D:/Maxent/AREA Y LIMA2/LIMA.shp")
 plot(mps)
 #hillshade_proj <- projectRaster(hillshade, crs = crs(b5))
@@ -50,8 +50,8 @@ levelplot(cat.act, at = breaks, col.regions = cols, main = "Distribución futura
 
 #------------------------------------
 #------------------------------------
-#####AREA ACTUAL
-###resolucion en grados geograficos 
+#####ÁREA ACTUAL
+###Resolución en grados geográficos 
 
 res(cat.act) #0.008333° y un grados equivale a 111.32km
 area <- res(cat.act)[1]*res(cat.act)[2]*111.32*111.32 #en Km cuadrados
