@@ -51,7 +51,7 @@ levelplot(cat.act, at = breaks, col.regions = cols, main = "       Distribución
 
 #------------------------------------
 #------------------------------------
-#####ÁREA ACTUAL
+#####ÁREA POTENCIAL PERÚ
 ###Resolución en grados geográficos 
 
 res(cat.act) #0.008333° y un grados equivale a 111.32km
@@ -78,7 +78,7 @@ bp<- barplot(aact, ylim=c(0,1370224),
 
 text(bp, aact + 60000 , labels = round(aact, digits = 2),  
      cex = 0.8)
-##########LIMA
+##########ÁREA POTENCIAL LIMA
 cat.act1 <- crop(cat.act,mps)
 lima = mask(cat.act1, mps)
 plot(lima)
