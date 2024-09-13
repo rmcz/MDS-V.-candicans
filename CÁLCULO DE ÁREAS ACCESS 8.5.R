@@ -21,7 +21,7 @@ plot(map)
 #summary(map)
 ####Mapa de raster estilo lucia
 
-###reproyectar
+###Reproyectar
 #### Límite de Lima
 mps <- shapefile("D:/Maxent/AREA Y LIMA2/LIMA.shp")
 plot(mps)
@@ -50,7 +50,7 @@ levelplot(cat.act, at = breaks, col.regions = cols, main = "Distribución futura
 
 #------------------------------------
 #------------------------------------
-#####ÁREA ACTUAL
+#####ÁREA POTENCIAL PERÚ
 ###Resolución en grados geográficos 
 
 res(cat.act) #0.008333° y un grados equivale a 111.32km
@@ -77,7 +77,7 @@ bp<- barplot(aact, ylim=c(0,1373632),
 
 text(bp, aact + 60000 , labels = round(aact, digits = 2),  
      cex = 0.8)
-##########LIMA
+##########ÁREA POTENCIAL LIMA
 cat.act1 <- crop(cat.act,mps)
 lima = mask(cat.act1, mps)
 plot(lima)
@@ -87,7 +87,7 @@ plot(mps, add=TRUE, border='dark grey')
 #        margin=T) + spplot(mps, fill = "transparent", col = "white")
 levelplot(lima, at = breaks, col.regions = cols, main = "       ACCESS-CM2 RCP 8.5 (2081 - 2100)",
           margin=F) + spplot(mps, fill = "transparent", col = "white")
-###resolucion en grados geograficos 
+###Resolución en grados geográficos 
 res(lima) #0.008333° y un grados equivale a 111.32km
 area1 <- res(lima)[1]*res(lima)[2]*111.32*111.32 #en Km cuadrados
 area1
