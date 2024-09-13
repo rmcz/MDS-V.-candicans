@@ -1,4 +1,4 @@
-#ConfiguraciÃ³n inicial
+#Configuración inicial
 library(rasterVis)
 library(dichromat)
 library(raster)
@@ -8,21 +8,21 @@ library(tidyverse)
 library(raster)
 
 
-##ACCSE45LIMA###
-##########ACCES45LIMA
+##MIROC 4.5 LIMA###
+##########MIROC 4.5 LIMA
 #Cargar datos
 map <- raster("D:/Maxent/AREA Y LIMA2/Vasconcellea_candicans_MIROC45.asc")
 plot(map)
 
-#_______AREA KM2 
+#_______ÁREA KM2 
 ####################
 #library(raster)
 #library(rgdal)
 #summary(map)
 ####Mapa de raster estilo lucia
 
-###reproyectar
-#### l,imite de lima
+###Reproyectar
+#### Límite de Lima
 mps <- shapefile("D:/Maxent/AREA Y LIMA2/LIMA.shp")
 plot(mps)
 #hillshade_proj <- projectRaster(hillshade, crs = crs(b5))
@@ -50,8 +50,8 @@ levelplot(cat.act, at = breaks, col.regions = cols, main = "       MIROC6 RCP 4.
 
 #------------------------------------
 #------------------------------------
-#####AREA ACTUAL
-###resolucion en grados geograficos 
+#####ÁREA POTENCIAL PERÚ
+###Resolución en grados geográficos 
 
 res(cat.act) #0.008333° y un grados equivale a 111.32km
 area <- res(cat.act)[1]*res(cat.act)[2]*111.32*111.32 #en Km cuadrados
@@ -77,7 +77,7 @@ bp<- barplot(aact, ylim=c(0,1374459),
 
 text(bp, aact + 60000 , labels = round(aact, digits = 2),  
      cex = 0.8)
-##########LIMA
+##########ÁREA POTENCIAL LIMA
 cat.act1 <- crop(cat.act,mps)
 lima = mask(cat.act1, mps)
 plot(lima)
@@ -87,7 +87,7 @@ plot(mps, add=TRUE, border='dark grey')
 #        margin=T) + spplot(mps, fill = "transparent", col = "white")
 levelplot(lima, at = breaks, col.regions = cols, main = "       MIROC6 RCP 4.5 (2081 - 2100)",
           margin=F) + spplot(mps, fill = "transparent", col = "white")
-###resolucion en grados geograficos 
+###Resolución en grados geográficos 
 res(lima) #0.008333° y un grados equivale a 111.32km
 area1 <- res(lima)[1]*res(lima)[2]*111.32*111.32 #en Km cuadrados
 area1
