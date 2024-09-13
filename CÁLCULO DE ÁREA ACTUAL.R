@@ -1,6 +1,6 @@
-#InstalaciÃ³n paquetes
-#Estas lineas se deben correr si es la primera instalaciÃ³n de Maxent
-#install.packages("dismo") #AÃ±adir maxent.jar en la carpeta java de dismo
+#Instalación de paquetes
+#Estas líneas se deben correr si es la primera instalación de Maxent
+#install.packages("dismo") #Añadir maxent.jar en la carpeta java de dismo
 #install.packages("raster")
 #install.packages("rgdal")
 #install.packages("rJava")
@@ -17,7 +17,7 @@ library(raster)
 map <- raster("D:/Maxent/AREA Y LIMA2/Vasconcellea_candicans_avg.asc")
 plot(map)
 
-#_______AREA KM2 
+#_______ÁREA KM2 
 ####################
 #library(raster)
 #library(rgdal)
@@ -25,7 +25,7 @@ plot(map)
 ####Mapa de raster estilo lucia
 
 ###reproyectar
-#### l,imite de lima
+#### Límite de Lima
 mps <- shapefile("D:/Maxent/AREA Y LIMA2/LIMA.shp")
 plot(mps)
 #hillshade_proj <- projectRaster(hillshade, crs = crs(b5))
@@ -53,8 +53,8 @@ levelplot(cat.act, at = breaks, col.regions = cols, main = "         Distribuci�
 
 #------------------------------------
 #------------------------------------
-#####AREA ACTUAL
-###resolucion en grados geograficos 
+#####ÁREA ACTUAL
+###Resolución en grados geográficos 
 
 res(cat.act) #0.008333° y un grados equivale a 111.32km
 area <- res(cat.act)[1]*res(cat.act)[2]*111.32*111.32 #en Km cuadrados
@@ -90,7 +90,7 @@ levelplot(lima, at = breaks, col.regions = cols, main = "Vasconcellea sp",
           margin=T) + spplot(mps, fill = "transparent", col = "white")
 levelplot(lima, at = breaks, col.regions = cols, main = "         Distribución actual",
           margin=F) + spplot(mps, fill = "transparent", col = "white")
-###resolucion en grados geograficos 
+###Resolución en grados geográficos 
 res(lima) #0.008333° y un grados equivale a 111.32km
 area1 <- res(lima)[1]*res(lima)[2]*111.32*111.32 #en Km cuadrados
 area1
